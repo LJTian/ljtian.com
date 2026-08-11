@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Production build outputs
+dist/
+build/
+
+# Virtual Environments & Python temporary files
+venv/
+.venv/
+env/
+__pycache__/
+*.py
+cropped/
+
+# System & Editor files
+.DS_Store
+*.log
+.env
+.env.local
+.vscode/
+.idea/
