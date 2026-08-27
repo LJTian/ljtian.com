@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
             </p>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60 text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>4 项核心服务全部正常运行中</span>
+              <span>6 项核心服务全部正常运行中</span>
             </div>
           </div>
 
@@ -51,6 +51,16 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="https://thub.iot-home.cn/" target="_blank" rel="noreferrer" className="hover:text-indigo-600 transition-colors">
                   THub 科技资讯集合 ↗
+                </a>
+              </li>
+              <li>
+                <a href="https://eat.ljtian.com/" target="_blank" rel="noreferrer" className="hover:text-indigo-600 transition-colors">
+                  今天吃什么 ↗
+                </a>
+              </li>
+              <li>
+                <a href="https://english.ljtian.com/" target="_blank" rel="noreferrer" className="hover:text-indigo-600 transition-colors">
+                  English Core 3000 ↗
                 </a>
               </li>
             </ul>

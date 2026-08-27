@@ -144,7 +144,7 @@ export function App() {
               </p>
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="border border-slate-800 p-4 rounded-2xl bg-slate-800/40">
-                  <div className="text-2xl font-bold text-white font-mono">4 个</div>
+                  <div className="text-2xl font-bold text-white font-mono">6 个</div>
                   <div className="text-xs text-slate-400 mt-1">上线核心产品/站点</div>
                 </div>
                 <div className="border border-slate-800 p-4 rounded-2xl bg-slate-800/40">
@@ -168,7 +168,9 @@ export function App() {
   { "name": "MakerFlow Pipeline", "url": "https://maker-flow.ljtian.com/" },
   { "name": "LJTian's Blog", "url": "https://blog.ljtian.com/" },
   { "name": "Kubebuilder 中文", "url": "https://kubebuilder.cn/" },
-  { "name": "THub 资讯集合", "url": "https://thub.iot-home.cn/" }
+  { "name": "THub 资讯集合", "url": "https://thub.iot-home.cn/" },
+  { "name": "今天吃什么", "url": "https://eat.ljtian.com/" },
+  { "name": "English Core 3000", "url": "https://english.ljtian.com/" }
 ]`}
               </pre>
             </div>

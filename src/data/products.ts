@@ -11,7 +11,7 @@ export interface Product {
   description: string;
   fullDescription: string;
   url: string;
-  iconName: 'workflow' | 'chat' | 'shield' | 'zap' | 'code' | 'cpu' | 'layers';
+  iconName: 'workflow' | 'chat' | 'shield' | 'zap' | 'code' | 'cpu' | 'layers' | 'utensils' | 'book';
   metrics: string;
   tags: string[];
   version: string;
@@ -122,6 +122,56 @@ export const products: Product[] = [
       { label: '抓取源', value: '多源头 RSS / API' },
       { label: '同步时延', value: '秒级实时' },
       { label: '领域覆盖', value: 'AI / 开源 / 云计算' },
+    ],
+  },
+  {
+    id: 'eat',
+    name: '今天吃什么',
+    category: '内容与社区',
+    tagline: '纠结症终结者 · 一键决定下一餐',
+    description: '帮你从犹豫中解脱的轻量决策工具。随机推荐与偏好筛选，快速敲定「今天吃什么」。',
+    fullDescription: '「今天吃什么」是面向日常纠结的轻量决策小站。通过偏好标签、随机抽取与一键重选，把「中午吃啥」从反复纠结变成几秒内的确定答案，适合个人与小团队日常使用。',
+    url: 'https://eat.ljtian.com/',
+    iconName: 'utensils',
+    metrics: '一键终结纠结',
+    tags: ['生活工具', '随机决策', '轻量 Web'],
+    version: 'v1.0.0',
+    status: 'online',
+    featured: true,
+    highlights: [
+      '纠结症友好：快速给出可执行的餐饮选择',
+      '轻量即开即用：无需注册，打开即决',
+      '适合日常场景：个人、家庭与小团队都能用',
+    ],
+    specs: [
+      { label: '定位', value: '生活决策工具' },
+      { label: '入口', value: 'eat.ljtian.com' },
+      { label: '形态', value: '轻量 Web App' },
+    ],
+  },
+  {
+    id: 'english-core',
+    name: 'English Core 3000',
+    category: '内容与社区',
+    tagline: '极速点读与词频通关面板',
+    description: '围绕核心 3000 词的极速点读学习台。支持词表筛选与精读卡片，帮助高效过词与巩固记忆。',
+    fullDescription: 'English Core 3000 是面向核心词汇学习的点读与词频通关面板。提供极速筛选（如 50 词快刷）与精读卡片两种模式，把高频核心词的过词、复习与点读集中在一个清晰面板里，适合碎片化英语词汇训练。',
+    url: 'https://english.ljtian.com/',
+    iconName: 'book',
+    metrics: 'Core 3000 词频通关',
+    tags: ['英语学习', '核心词汇', '点读', '词频'],
+    version: 'v1.0.0',
+    status: 'online',
+    featured: true,
+    highlights: [
+      'Core 3000 词频覆盖：聚焦最高价值核心词',
+      '双模式学习：极速筛选与精读卡片切换',
+      '点读式复习：适合碎片时间高频过词',
+    ],
+    specs: [
+      { label: '词库规模', value: 'Core 3000' },
+      { label: '学习模式', value: '筛选 / 卡片' },
+      { label: '入口', value: 'english.ljtian.com' },
     ],
   },
 ];
