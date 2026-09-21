@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, User, Menu, X, Command } from 'lucide-react';
+import { Search, Menu, X, Command, Github, Mail } from 'lucide-react';
 
 interface HeaderProps {
   onOpenSearch: () => void;
@@ -23,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, activeSection, onN
     { id: 'products', label: '产品矩阵' },
     { id: 'solutions', label: '解决方案' },
     { id: 'docs', label: '架构文档' },
-    { id: 'about', label: '关于' },
+    { id: 'about', label: '关于作者' },
   ];
 
   return (
@@ -78,8 +78,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, activeSection, onN
           })}
         </nav>
 
-        {/* Right: Search + User Actions */}
-        <div className="flex items-center gap-2">
+        {/* Right: Search + Social + Mobile Actions */}
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <button
             onClick={onOpenSearch}
             className="flex items-center gap-2 px-3.5 py-1.5 text-sm text-slate-500 hover:text-slate-800 bg-slate-100/80 hover:bg-slate-100 border border-slate-200/80 rounded-full transition-all duration-200 group"
@@ -92,17 +92,30 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, activeSection, onN
             </kbd>
           </button>
 
-          <button 
-            onClick={() => alert("用户中心: 您已连接微服务门户")}
+          <a
+            href="https://github.com/LJTian"
+            target="_blank"
+            rel="noreferrer"
             className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full border border-transparent hover:border-slate-200 transition-all"
-            title="个人账号"
+            title="GitHub: LJTian"
+            aria-label="GitHub 个人主页"
           >
-            <User className="w-5 h-5" />
-          </button>
+            <Github className="w-4 h-4" />
+          </a>
+
+          <a
+            href="mailto:tianlijun315@gmail.com"
+            className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full border border-transparent hover:border-slate-200 transition-all"
+            title="联系邮箱: tianlijun315@gmail.com"
+            aria-label="发送邮件联系我"
+          >
+            <Mail className="w-4 h-4" />
+          </a>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100"
+            aria-label="打开移动菜单"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -132,6 +145,24 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, activeSection, onN
           >
             <Search className="w-4 h-4" /> 检索产品与文档...
           </button>
+          <div className="pt-2 flex items-center gap-3">
+            <a
+              href="https://github.com/LJTian"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-xs font-mono text-slate-700"
+            >
+              <Github className="w-3.5 h-3.5" />
+              <span>GitHub</span>
+            </a>
+            <a
+              href="mailto:tianlijun315@gmail.com"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 text-xs font-mono text-slate-700"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              <span>Email</span>
+            </a>
+          </div>
         </div>
       )}
     </header>

@@ -5,8 +5,8 @@ import { ProductGrid } from './components/ProductGrid';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { SearchModal } from './components/SearchModal';
 import { Footer } from './components/Footer';
-import { Product } from './data/products';
-import { Sparkles, Terminal, FileText, Cpu, CheckCircle } from 'lucide-react';
+import { Product, products } from './data/products';
+import { Sparkles, Terminal, FileText, Cpu, CheckCircle, User, Github, Mail, ArrowUpRight } from 'lucide-react';
 
 export function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -144,7 +144,7 @@ export function App() {
               </p>
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="border border-slate-800 p-4 rounded-2xl bg-slate-800/40">
-                  <div className="text-2xl font-bold text-white font-mono">6 个</div>
+                  <div className="text-2xl font-bold text-white font-mono">{products.length} 个</div>
                   <div className="text-xs text-slate-400 mt-1">上线核心产品/站点</div>
                 </div>
                 <div className="border border-slate-800 p-4 rounded-2xl bg-slate-800/40">
@@ -164,21 +164,79 @@ export function App() {
                 <span>AUTHENTIC_PRODUCTS.json</span>
               </div>
               <pre className="text-indigo-300 overflow-x-auto text-[11px] leading-relaxed">
-{`[
-  { "name": "MakerFlow Pipeline", "url": "https://maker-flow.ljtian.com/" },
-  { "name": "LJTian's Blog", "url": "https://blog.ljtian.com/" },
-  { "name": "Kubebuilder 中文", "url": "https://kubebuilder.cn/" },
-  { "name": "THub 资讯集合", "url": "https://thub.iot-home.cn/" },
-  { "name": "今天吃什么", "url": "https://eat.ljtian.com/" },
-  { "name": "English Core 3000", "url": "https://english.ljtian.com/" }
-]`}
+{JSON.stringify(
+  products.map((p) => ({ name: p.name, url: p.url })),
+  null,
+  2
+)}
               </pre>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. About & Contact Section */}
+        <section id="about" className="py-20 bg-slate-50/70 border-t border-slate-200/70 relative">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-50 border border-indigo-200/70 text-indigo-700 text-xs font-mono font-medium">
+                <User className="w-3.5 h-3.5" />
+                <span>ABOUT & CONTACT</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                关于作者与联系方式
+              </h2>
+              <p className="text-slate-600 text-base leading-relaxed">
+                全栈与云原生技术探索者，专注于重基础设施、轻业务逻辑（Heavy Infrastructure, Light Logic）的工程落地实践。
+                欢迎通过 GitHub 关注开源动态，或发送邮件交流探讨。
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              {/* GitHub Card */}
+              <a
+                href="https://github.com/LJTian"
+                target="_blank"
+                rel="noreferrer"
+                className="group bg-white border border-slate-200/90 rounded-3xl p-6 shadow-sm hover:shadow-portal-hover hover:border-indigo-300 transition-all flex items-center justify-between"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-950 text-white flex items-center justify-center group-hover:bg-indigo-600 transition-colors">
+                    <Github className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-mono text-slate-400">GITHUB PROFILE</div>
+                    <div className="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                      github.com/LJTian
+                    </div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              </a>
+
+              {/* Email Card */}
+              <a
+                href="mailto:tianlijun315@gmail.com"
+                className="group bg-white border border-slate-200/90 rounded-3xl p-6 shadow-sm hover:shadow-portal-hover hover:border-indigo-300 transition-all flex items-center justify-between"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-200/60 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-mono text-slate-400">EMAIL ADDRESS</div>
+                    <div className="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                      tianlijun315@gmail.com
+                    </div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              </a>
             </div>
           </div>
         </section>
       </main>
 
-      {/* 5. Footer */}
+      {/* 6. Footer */}
       <Footer />
 
       {/* Modals */}

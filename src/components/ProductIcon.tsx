@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquare, BarChart3, Code2, Cpu, Shield, Layers, GitFork, Zap, Utensils, BookOpen, LucideIcon } from 'lucide-react';
+import { MessageSquare, BarChart3, Code2, Cpu, Shield, Layers, GitFork, Zap, Utensils, BookOpen, Bot, LucideIcon } from 'lucide-react';
 import { Product } from '../data/products';
 
 interface ProductIconProps {
@@ -19,6 +19,7 @@ export const ProductIcon: React.FC<ProductIconProps> = ({ iconName }) => {
       case 'zap': return Zap;
       case 'utensils': return Utensils;
       case 'book': return BookOpen;
+      case 'bot': return Bot;
       default: return Code2;
     }
   };

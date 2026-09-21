@@ -11,7 +11,7 @@ export interface Product {
   description: string;
   fullDescription: string;
   url: string;
-  iconName: 'workflow' | 'chat' | 'shield' | 'zap' | 'code' | 'cpu' | 'layers' | 'utensils' | 'book';
+  iconName: 'workflow' | 'chat' | 'shield' | 'zap' | 'code' | 'cpu' | 'layers' | 'utensils' | 'book' | 'bot';
   metrics: string;
   tags: string[];
   version: string;
@@ -47,6 +47,31 @@ export const products: Product[] = [
       { label: '交付周期', value: '~10 Mins' },
       { label: '架构范式', value: 'Two-Gate SOP' },
       { label: '基础设施', value: 'Docker & Nginx' },
+    ],
+  },
+  {
+    id: 'grokbot-cn',
+    name: 'Grok Bot 实战指南',
+    category: '开发者服务',
+    tagline: 'SpaceX 工程师撰写 · 72 小时直播构建 · 24 页全景复盘',
+    description: 'SpaceX 工程师团队撰写的 Grok Bot 深度实战指南中文版。涵盖多 Agent 编排、全自动 PR 流水线与实战 Prompt 库。',
+    fullDescription: 'SpaceX / xAI 工程师团队撰写的 Grok Bot 深度实战指南中文版。提炼自 72 小时无剪辑实战直播（从零构建游戏工作室 Thursday Arena，累计自动化合并 433 个 PR），全景覆盖多 Agent 协作、专属计算机虚拟机底座、确定性验证、高阶 Prompt 肌肉记忆与一线落地清单。支持在线交互阅读、高清 PDF 下载及打印。',
+    url: 'https://grokbot-cn.ljtian.com/',
+    iconName: 'bot',
+    metrics: '24 页高浓度复盘',
+    tags: ['AI Agent', 'Grok Bot', '多 Agent 编排', '实战复盘'],
+    version: 'v1.0.0',
+    status: 'online',
+    featured: true,
+    highlights: [
+      '72 小时极限实操沉淀：真实见证 433 个 PR 自动化合并与首日 2,000+ 真实玩家落地',
+      '三大核心基石假设：队友范式而非任务范式、专属计算机虚拟机与全天候云端运行',
+      '全功能交互体验：支持章节秒级跳转、Prompt 一键复制、中文高清 PDF 下载与打印',
+    ],
+    specs: [
+      { label: '内容体量', value: '24 页深度专著' },
+      { label: '核心主题', value: '多 Agent 协同体系' },
+      { label: '入口', value: 'grokbot-cn.ljtian.com' },
     ],
   },
   {

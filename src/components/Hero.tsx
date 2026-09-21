@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { WireframeScene } from './WireframeScene';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { products } from '../data/products';
 
 interface HeroProps {
   onExploreClick: () => void;
@@ -24,7 +25,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           {/* Badge indicator */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50/80 border border-indigo-200/60 text-indigo-950 text-xs font-medium tracking-wide">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>4 个数字产品已上线稳定运行</span>
+            <span>{products.length} 个数字产品已上线稳定运行</span>
             <span className="text-indigo-200">|</span>
             <span className="text-indigo-600 font-semibold flex items-center gap-1">
               Minimal Tech Aesthetic <Sparkles className="w-3 h-3 text-indigo-500" />
@@ -66,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
           {/* Metrics */}
           <div className="pt-6 border-t border-slate-100 w-full grid grid-cols-3 gap-4 text-left">
             <div>
-              <div className="text-xl sm:text-2xl font-bold text-slate-900">4 个</div>
+              <div className="text-xl sm:text-2xl font-bold text-slate-900">{products.length} 个</div>
               <div className="text-xs text-slate-500 mt-0.5">上线核心站点</div>
             </div>
             <div>
